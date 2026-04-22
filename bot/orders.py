@@ -14,7 +14,7 @@ def place_order(client, symbol, side, order_type, quantity, price=None):
             params["timeInForce"] = "GTC"
 
         logging.info(f"Sending order request : {params}")
-        response = client.future_create_order(**params)
+        response = client.futures_create_order(**params)
         logging.info(f"Order response : {response}")
         return response
     except Exception as e:
